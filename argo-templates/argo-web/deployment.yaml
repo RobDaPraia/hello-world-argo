@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-web
+  namespace: argo-web
+spec:
+  selector:
+    matchLabels:
+      app: argo-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: argo-web
+    spec:
+      containers:
+        - name: argo-web
+          image: argoweb:v1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"

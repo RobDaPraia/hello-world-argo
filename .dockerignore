@@ -1,0 +1,9 @@
+# https://docs.docker.com/build/concepts/context/#dockerignore-files
+
+# Exclude all secrets files
+**/.venv
+**/.env
+
+.venv
+.github
+.idea

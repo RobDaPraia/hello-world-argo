@@ -1,0 +1,29 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: src/argo-web/Dockerfile
+    ports:
+      - "5000:5000"
+    env_file: src/argo-web/app/.env
+    volumes:
+      - ./fileshare/web:/mnt/data
+
+#
+# To build the Docker App, run the following command:
+# docker compose build
+# docker compose build --no-cache
+# docker compose build --progress=plain --no-cache
+#
+# To start the Docker App, run the following command:
+# docker compose up
+# docker compose up -d
+#
+# To remove containers, run the following command:
+# docker compose down
+#
+# To remove all old and unused images
+# docker image prune --all --force
+#
+# Open the browser and navigate to http://localhost:5000
+#
